@@ -32,7 +32,7 @@ public class Zoo {
             }
         }
         animals[count++] = a;
-        System.out.println("✅ " + a.name + " added to zoo " + name);
+        System.out.println( a.name + " added to zoo " + name);
         return true;
     }
     public void displayZoo() {
@@ -68,7 +68,7 @@ public class Zoo {
 
         animals[count - 1] = null;
         count--;
-        System.out.println("✅ " + name + " deleted from zoo " + this.name);
+        System.out.println( name + " deleted from zoo " + this.name);
         return true;
     }
     public boolean isFull() {
