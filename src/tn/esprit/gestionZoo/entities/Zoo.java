@@ -1,3 +1,5 @@
+package tn.esprit.gestionZoo.entities;
+
 public class Zoo {
 
     public static final int MAX_CAGES = 25;
@@ -18,23 +20,35 @@ public class Zoo {
     }
     public boolean addAnimal(Animal a) {
         if (a == null) {
-            System.out.println(" invalid animal ");
+            System.out.println("invalid animal");
             return false;
         }
-        if (isFull()) {
-            System.out.println("zoo full");
+
+
+        if (isZooFull()) {
+            System.out.println("zoo is full");
             return false;
         }
+
+
         for (int i = 0; i < count; i++) {
-            if (animals[i].name.equals(a.name)) {
-                System.out.println(" animal already exists");
+            if (animals[i].getName().equals(a.getName())) {
+                System.out.println("animal already exists");
                 return false;
             }
         }
+
         animals[count++] = a;
-        System.out.println( a.name + " added to zoo " + name);
+        System.out.println(  a.getName() + "added to zoo" + name);
         return true;
     }
+
+
+    public boolean isZooFull() {
+        return count >= MAX_CAGES;
+    }
+
+
     public void displayZoo() {
         System.out.println("zoo name : " + name);
         System.out.println("city      : " + city);
@@ -58,7 +72,7 @@ public class Zoo {
     public boolean removeAnimal(String name) {
         int index = searchAnimal(name);
         if (index == -1) {
-            System.out.println(" Animal not found ");
+            System.out.println(" tn.esprit.gestionZoo.entities.Animal not found ");
             return false;
         }
 
